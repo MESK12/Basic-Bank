@@ -1,0 +1,123 @@
+<div
+  class="
+    container-fluid
+    customer-container
+    d-flex
+    justify-content-center
+    align-items-center
+    flex-column
+    mt-3
+    h-100
+    overflow-hidden
+    animate__animated animate__fadeIn animate__slow 
+  "
+>
+  <div class="container-fluid customer-card-container w-50 mt-5 p-5">
+    <div class="card p-2 customer-card">
+      <h2 class="card-header text-center fw-bold">Customer Account Details</h2>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="fw-bold"> Name: </span>
+
+              <%=data.name%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Gender: </span>
+              
+              <%=data.gender%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Created on: </span>
+
+              <%=data.createdAt%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Modified on: </span>
+
+              <%=data.updatedAt%>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body border border-dark mt-2">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="fw-bold"> Account ID: </span>
+
+            <%=data.accNo%>
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold"> Email : </span>
+
+            <%=data.email%>
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold"> Contact Number: </span>
+
+            <%=data.phone%>
+          </li>
+
+          <li class="list-group-item">
+            <span class="fw-bold"> Residential Address: </span>
+
+            <%=data.address%>
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold"> Current Balance: </span>
+            <%=(data.balance).toLocaleString('en-IN')%>
+          </li>
+        </ul>
+        <div
+          class="
+            container-fluid
+            buttons-container
+            d-flex
+            justify-content-around
+            align-items-center
+            mt-3
+          "
+        >
+          
+          <button
+            type="button"
+            class="btn-sm btn-md btn-success fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+          <ul class="article-ul">
+            <li>
+              <a href="/coustomer/<%= data._id %>/addFunds ">
+                Add funds
+              </a>
+            </li>
+          </ul>
+          </button>
+          <button
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#withdrawlBackdrop"
+          >
+          <ul class="article-ul">
+            <li>
+              <a href="/coustomer/<%= data._id %>/withdrawFunds ">
+                Withdraw Funds
+              </a>
+            </li>
+          </ul>
+          </button>
+          <button
+            type="button"
+          >
+          <ul class="article-ul">
+            <li>
+              <a href="/coustomer/<%= data._id %>/transferFunds ">
+                Transfer Funds
+              </a>
+            </li>
+          </ul>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
